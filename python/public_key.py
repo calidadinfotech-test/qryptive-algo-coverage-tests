@@ -20,6 +20,10 @@ def sign_block(seed: bytes, message: bytes) -> bytes:
     sk = AugSchemeMPL.key_gen(seed)
     return AugSchemeMPL.sign(sk, message)
 
+def sign_test(data,message):
+    t = test.key_gen(data)
+    return test.sign(t,message)
+
 
 def sign_taproot(msg32: bytes, private_key: bytes, aux: bytes) -> bytes:
     return schnorr_sign(msg32, private_key, aux)
